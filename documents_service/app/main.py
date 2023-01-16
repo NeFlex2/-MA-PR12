@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 
 from . import crud, models, schemas
 from .database import SessionLocal, engine
-from document import Document, CreateDocumentModel
+from documents_service.app.document import Document, CreateDocumentModel
 
 #documents: list[Document] = [
     #Document(0, 'First doc', 'Content'),
@@ -76,8 +76,8 @@ async def startup():
 
 @app.post("/v1/docs", response_model=schemas.SQLDocument)
 def add_doc(document: schemas.CreateDocumentModel, db: Session = Depends(get_db)):
-    #db_document = crud.get_docs_by_id(db, document_id=document.)
-    #if db_document:
+    # db_document = crud.get_docs_by_id(db, document_id=document)
+    # if db_document:
     #    raise HTTPException(status_code=400, detail="Title already registered")
     return crud.add_doc(db=db, document=document)
 
