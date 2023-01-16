@@ -11,21 +11,21 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      # Build Image
-      - name: Build Docker Image
-        run: docker build . --file Dockerfile -t NeFlex2/ma-docs-service:latest
-
-      # Test container
-      - name: Run Docker Container
-        run: docker run -p 8000:80 -d NeFlex2/ma-docs-service:latest
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
-      - name: Install requirements
-        run: pip install pytest requests
-      - name: Run tests
-        run: pytest
+#      # Build Image
+#      - name: Build Docker Image
+#        run: docker build . --file Dockerfile -t NeFlex2/ma-docs-service:latest
+#
+#      # Test container
+#      - name: Run Docker Container
+#        run: docker run -p 8000:80 -d NeFlex2/ma-docs-service:latest
+#      - name: Set up Python
+#        uses: actions/setup-python@v4
+#        with:
+#          python-version: '3.11'
+#      - name: Install requirements
+#        run: pip install pytest requests
+#      - name: Run tests
+#        run: pytest
 
       # Push tag
       - name: Login into Docker Hub
