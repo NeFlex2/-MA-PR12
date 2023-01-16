@@ -11,11 +11,11 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build Docker Image
-        run: docker build . --file Dockerfile -t NeFlex2/ma-docs-service:latest
+        run: docker build . --file Dockerfile -t neflex2/ma-docs-service:latest
       - name: Login into Docker Hub
         uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Push tag to Docker Hub
-        run: docker push NeFlex2/ma-docs-service:latest
+        run: docker push neflex2/ma-docs-service:latest
