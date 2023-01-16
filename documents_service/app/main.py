@@ -7,15 +7,15 @@ from . import crud, models, schemas
 from .database import SessionLocal, engine
 from documents_service.app.document import Document, CreateDocumentModel
 
-#documents: list[Document] = [
-    #Document(0, 'First doc', 'Content'),
-    #Document(1, 'Second doc', 'Long, very long text')
-#]
+documents: list[Document] = [
+    Document(0, 'First doc', 'Content'),
+    Document(1, 'Second doc', 'Long, very long text')
+]
 
-#def add_document(content: CreateDocumentModel):
-#    id = len(documents)
-#    documents.append(Document(id, content.title, content.body))
-#    return id
+def add_document(content: CreateDocumentModel):
+   id = len(documents)
+   documents.append(Document(id, content.title, content.body))
+   return id
 
 models.Base.metadata.create_all(bind=engine)
 
@@ -98,6 +98,6 @@ def get_docs_by_id(id: int, db: Session = Depends(get_db)):
 # SQL
 ###
 
-@app.get("/__health")
-async def check_service():
-    return
+# @app.get("/__health")
+# async def check_service():
+#     return
