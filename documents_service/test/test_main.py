@@ -13,7 +13,7 @@ class TestDocuments():
         assert 2+2 == 4
 
     def test_another_default(self):
-        assert 3+2 == 5
+        assert 3+2 == 4
 
     # def test_get_empty_docs(self):
     #     response = requests.get(f'{api_url}/v1/docs')
